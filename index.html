@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engine Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-content">
+            <div class="logo-section">
+                <div class="logo-container">
+                    <img src="abhivijay-logo.png" alt="ABHIVIJAY Technologies">
+                </div>
+            </div>
+            <div class="nav-buttons">
+                <button class="nav-button save-btn">
+                    <div class="button-content">
+                        <i class="fas fa-save"></i>
+                        <span>Save</span>
+                    </div>
+                </button>
+                <button class="nav-button load-btn">
+                    <div class="button-content">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Load</span>
+                    </div>
+                </button>
+                <button class="nav-button connect-btn">
+                    <div class="button-content">
+                        <i class="fas fa-plug"></i>
+                        <span>Connect</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="fixed-section">
+            <div class="params-grid">
+                <!-- Speed Parameters -->
+                <div class="param-card">
+                    <div class="param-group">
+                        <div class="param-label">Speed [RPM]</div>
+                        <div class="param-value highlight">4150</div>
+                        <div class="param-label">Speed multiplier</div>
+                        <div class="param-value highlight">0.76775</div>
+                        <div class="param-label">Fuel type</div>
+                        <div class="param-value">LPG/CNG</div>
+                        <div class="param-label">Type of engine</div>
+                        <div class="param-value">2</div>
+                    </div>
+                </div>
+
+                <!-- Fuelling Parameters -->
+                <div class="param-card">
+                    <div class="param-group">
+                        <div class="param-label">% fuelling</div>
+                        <div class="param-value highlight">0.555</div>
+                        <div class="param-label">Duty cycle [%]</div>
+                        <div class="param-value">55</div>
+                        <div class="param-label">Injection duration [ms]</div>
+                        <div class="param-value highlight">0.111</div>
+                        <div class="param-label">Z opening</div>
+                        <div class="param-value">2</div>
+                    </div>
+                </div>
+
+                <!-- MAP & Temperature -->
+                <div class="param-card">
+                    <div class="param-group">
+                        <div class="param-label">MAP</div>
+                        <div class="param-value">48</div>
+                        <div class="param-label">MAT</div>
+                        <div class="param-value">55</div>
+                        <div class="param-label">EGT 1</div>
+                        <div class="param-value">250</div>
+                        <div class="param-label">EGT 2</div>
+                        <div class="param-value">250</div>
+                    </div>
+                </div>
+
+                <!-- Knock & System -->
+                <div class="param-card">
+                    <div class="param-group">
+                        <div class="param-label">Knock 1</div>
+                        <div class="param-value">--</div>
+                        <div class="param-label">Knock 2</div>
+                        <div class="param-value">--</div>
+                        <div class="param-label">Delta P</div>
+                        <div class="param-value">1.2</div>
+                        <div class="param-label">System Voltage</div>
+                        <div class="param-value">--</div>
+                    </div>
+                </div>
+
+                <!-- Fuelling Keys -->
+                <div class="param-card">
+                    <div class="param-group">
+                        <div class="param-label">Fuelling Key [ms]</div>
+                        <div class="param-value">--</div>
+                        <div class="param-label">Fuelling Starting [ms]</div>
+                        <div class="param-value">--</div>
+                        <div class="param-label">Start Fuel DFPM</div>
+                        <div class="param-value">--</div>
+                        <div class="param-label">Errors</div>
+                        <div class="param-value">--</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scrollable-content">
+            <div class="section-header">
+                <h2>Speed / MAP</h2>
+            </div>
+            <div class="speed-map-container">
+                <table class="speed-map-table">
+                    <tr class="column-groups">
+                        <th colspan="13">Speed / MAP Settings</th>
+                    </tr>
+                    <tr class="sub-headers">
+                        <th>Speed/MAP</th>
+                        <th>500</th><th>1000</th><th>1500</th><th>2000</th><th>2500</th>
+                        <th>3000</th><th>3500</th><th>4000</th><th>4500</th><th>5000</th>
+                        <th>5500</th><th>6000</th>
+                    </tr>
+                    <tr><td>20</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+                    <tr><td>30</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                    <tr><td>40</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+                    <tr><td>50</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+                    <tr><td>60</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
+                    <tr><td>70</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+                    <tr><td>80</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+                    <tr><td>90</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                    <tr><td>100</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                </table>
+                <div class="fuelling-indicator">
+                    <span>% fuelling</span>
+                    <span class="highlight">11.1</span>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Sensor Settings</h2>
+            </div>
+            <div class="sensor-settings">
+                <div class="sensor-boxes">
+                    <div class="sensor-box">
+                        <h4>MAT</h4>
+                        <div class="slope-offset">
+                            <label>Slope</label>
+                            <input type="text">
+                            <label>Offset</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="sensor-box">
+                        <h4>EGT 1</h4>
+                        <div class="slope-offset">
+                            <label>Slope</label>
+                            <input type="text">
+                            <label>Offset</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="sensor-box">
+                        <h4>EGT 2</h4>
+                        <div class="slope-offset">
+                            <label>Slope</label>
+                            <input type="text">
+                            <label>Offset</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="sensor-box">
+                        <h4>MAP</h4>
+                        <div class="slope-offset">
+                            <label>Slope</label>
+                            <input type="text">
+                            <label>Offset</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="sensor-box">
+                        <h4>Delta P</h4>
+                        <div class="slope-offset">
+                            <label>Slope</label>
+                            <input type="text">
+                            <label>Offset</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Trim</h2>
+            </div>
+            <div class="trim-settings">
+                <table class="trim-table">
+                    <!-- Column group headers -->
+                    <tr class="column-groups">
+                        <th colspan="2">MAT</th>
+                        <th colspan="2">EGT1</th>
+                        <th colspan="2">EGT2</th>
+                        <th colspan="2">MAP</th>
+                        <th colspan="2">Delta P</th>
+                    </tr>
+                    <!-- Sub-headers -->
+                    <tr class="sub-headers">
+                        <th>MAT</th><th>Trim</th>
+                        <th>EGT1</th><th>Trim</th>
+                        <th>EGT2</th><th>Trim</th>
+                        <th>MAP</th><th>Trim</th>
+                        <th>Delta P</th><th>Trim</th>
+                    </tr>
+                    <!-- Table data -->
+                    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>10</td><td>0</td><td>100</td><td>0</td><td>100</td><td>0</td><td>10</td><td>0</td><td>1</td><td>0</td></tr>
+                    <tr><td>20</td><td>0</td><td>200</td><td>0</td><td>200</td><td>0</td><td>20</td><td>0</td><td>2</td><td>0</td></tr>
+                    <tr><td>30</td><td>1</td><td>300</td><td>1</td><td>300</td><td>1</td><td>30</td><td>1</td><td>3</td><td>1</td></tr>
+                    <tr><td>40</td><td>1</td><td>400</td><td>1</td><td>400</td><td>1</td><td>40</td><td>1</td><td>4</td><td>1</td></tr>
+                    <tr><td>50</td><td>1</td><td>500</td><td>1</td><td>500</td><td>1</td><td>50</td><td>1</td><td>5</td><td>1</td></tr>
+                    <tr><td>60</td><td>1</td><td>600</td><td>1</td><td>600</td><td>1</td><td>60</td><td>1</td><td>6</td><td>1</td></tr>
+                    <tr><td>70</td><td>0</td><td>700</td><td>0</td><td>700</td><td>0</td><td>70</td><td>0.5</td><td>7</td><td>0</td></tr>
+                    <tr><td>80</td><td>0</td><td>800</td><td>0</td><td>800</td><td>0</td><td>80</td><td>0.25</td><td>8</td><td>0</td></tr>
+                    <tr><td>90</td><td>0</td><td>900</td><td>0</td><td>900</td><td>0</td><td>90</td><td>0</td><td>9</td><td>0</td></tr>
+                    <tr><td>100</td><td>0</td><td>1000</td><td>0</td><td>1000</td><td>0</td><td>100</td><td>0</td><td>10</td><td>0</td></tr>
+                    <tr>
+                        <td>Trim</td><td class="highlight">1</td>
+                        <td>Trim</td><td class="highlight">0.5</td>
+                        <td>Trim</td><td class="highlight">0.5</td>
+                        <td>Trim</td><td class="highlight">0.5</td>
+                        <td>Trim</td><td class="highlight">0.2</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section-header">
+                <h2>Actuators Setting</h2>
+            </div>
+            <div class="actuators-section">
+                <div class="actuators-grid">
+                    <!-- Opening Actuator -->
+                    <table class="actuator-table">
+                        <tr class="column-groups">
+                            <th colspan="2">Opening Actuator</th>
+                        </tr>
+                        <tr class="sub-headers">
+                            <th>Z fuelling</th><th>Actual</th>
+                        </tr>
+                        <tr><td>0</td><td>0</td></tr>
+                        <tr><td>10</td><td>0</td></tr>
+                        <tr><td>20</td><td>2</td></tr>
+                        <tr><td>30</td><td>30</td></tr>
+                        <tr><td>40</td><td>40</td></tr>
+                        <tr><td>50</td><td>50</td></tr>
+                        <tr><td>60</td><td>60</td></tr>
+                        <tr><td>70</td><td>70</td></tr>
+                        <tr><td>80</td><td>80</td></tr>
+                        <tr><td>90</td><td>90</td></tr>
+                        <tr><td>100</td><td>100</td></tr>
+                        <tr><td>Actual</td><td class="highlight">0</td></tr>
+                    </table>
+
+                    <!-- Z Opening Actuator -->
+                    <table class="actuator-table">
+                        <tr class="column-groups">
+                            <th colspan="2">Z Opening Actuator</th>
+                        </tr>
+                        <tr class="sub-headers">
+                            <th>Z fuelling</th><th>Actual</th>
+                        </tr>
+                        <tr><td>0</td><td>0</td></tr>
+                        <tr><td>10</td><td>1</td></tr>
+                        <tr><td>20</td><td>2</td></tr>
+                        <tr><td>30</td><td>3</td></tr>
+                        <tr><td>40</td><td>4</td></tr>
+                        <tr><td>50</td><td>5</td></tr>
+                        <tr><td>60</td><td>6</td></tr>
+                        <tr><td>70</td><td>7</td></tr>
+                        <tr><td>80</td><td>8</td></tr>
+                        <tr><td>90</td><td>9</td></tr>
+                        <tr><td>100</td><td>10</td></tr>
+                        <tr><td>Actual</td><td class="highlight">0.0555</td></tr>
+                    </table>
+
+                    <!-- Z Opening Injector -->
+                    <table class="actuator-table">
+                        <tr class="column-groups">
+                            <th colspan="2">Z Opening Injector</th>
+                        </tr>
+                        <tr class="sub-headers">
+                            <th>Z fuelling [ms]</th><th>Actual</th>
+                        </tr>
+                        <tr><td>0</td><td>0</td></tr>
+                        <tr><td>10</td><td>2</td></tr>
+                        <tr><td>20</td><td>4</td></tr>
+                        <tr><td>30</td><td>6</td></tr>
+                        <tr><td>40</td><td>8</td></tr>
+                        <tr><td>50</td><td>10</td></tr>
+                        <tr><td>60</td><td>12</td></tr>
+                        <tr><td>70</td><td>14</td></tr>
+                        <tr><td>80</td><td>16</td></tr>
+                        <tr><td>90</td><td>18</td></tr>
+                        <tr><td>100</td><td>20</td></tr>
+                        <tr><td>Actual</td><td class="highlight">0.111</td></tr>
+                    </table>
+
+                    <!-- Oil Pump -->
+                    <table class="actuator-table">
+                        <tr class="column-groups">
+                            <th colspan="2">Oil Pump</th>
+                        </tr>
+                        <tr class="sub-headers">
+                            <th>Duty cycle</th><th>Actual</th>
+                        </tr>
+                        <tr><td>0</td><td>0</td></tr>
+                        <tr><td>10</td><td>1</td></tr>
+                        <tr><td>20</td><td>2</td></tr>
+                        <tr><td>30</td><td>3</td></tr>
+                        <tr><td>40</td><td>4</td></tr>
+                        <tr><td>50</td><td>5</td></tr>
+                        <tr><td>60</td><td>6</td></tr>
+                        <tr><td>70</td><td>7</td></tr>
+                        <tr><td>80</td><td>8</td></tr>
+                        <tr><td>90</td><td>9</td></tr>
+                        <tr><td>100</td><td>10</td></tr>
+                        <tr><td>Actual</td><td class="highlight">0.76775</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

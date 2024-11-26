@@ -1,0 +1,654 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-container img {
+    height: 36px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.divider {
+    height: 24px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 16px;
+}
+
+.company-name {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.nav-button {
+    height: 40px;
+    min-width: 110px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.button-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 16px;
+    position: relative;
+    margin-right: 10px;
+    z-index: 1;
+}
+
+.button-content i {
+    font-size: 16px;
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.button-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #e3f2fd;
+    transition: height 0.2s ease;
+}
+
+.nav-button:hover .button-highlight {
+    height: 100%;
+}
+
+.nav-button:hover {
+    color: #1976d2;
+}
+
+.save-btn:hover {
+    background: rgba(76, 175, 80, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.save-btn:hover .button-highlight {
+    background-color: #e8f5e9;
+}
+
+.load-btn:hover {
+    background: rgba(33, 150, 243, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.load-btn:hover .button-highlight {
+    background-color: #e3f2fd;
+}
+
+.connect-btn:hover {
+    background: rgba(244, 67, 54, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.connect-btn:hover .button-highlight {
+    background-color: #ffebee;
+}
+
+.connect-btn.active {
+    background: rgba(76, 175, 80, 0.3);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+}
+
+.connect-btn.active .button-content {
+    color: #e8f5e9;
+}
+
+/* Add media query for responsive design */
+@media screen and (max-width: 768px) {
+    .company-name {
+        display: none;
+    }
+    
+    .divider {
+        display: none;
+    }
+    
+    .nav-button {
+        min-width: auto;
+        padding: 0 12px;
+    }
+    
+    .button-content span {
+        display: none;
+    }
+    
+    .nav-content {
+        padding: 0 16px;
+    }
+}
+
+/* Container and Fixed Section */
+.container {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+.fixed-section {
+    position: sticky;
+    top: 64px;
+    background: #f8fafc;
+    padding: 15px;
+    z-index: 900;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+/* Parameters grid layout - updated to 5 columns */
+.params-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+/* Parameter card styling */
+.param-card {
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: all 0.2s ease;
+}
+
+.param-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Parameter label */
+.param-label {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+/* Parameter value */
+.param-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+/* Highlight values */
+.param-value.highlight {
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Parameter groups */
+.param-group {
+    border-left: 2px solid #2563eb;
+    padding-left: 8px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .params-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .params-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .param-label {
+        font-size: 11px;
+    }
+    
+    .param-value {
+        font-size: 13px;
+    }
+}
+
+/* Section Headers */
+.section-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 12px 20px;
+    margin: 24px 0 15px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.section-header:first-child {
+    margin-top: 0;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Speed/MAP Table */
+.speed-map-container {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.speed-map-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.speed-map-table td {
+    border: 1px solid #000;
+    padding: 6px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.speed-map-table tr:first-child,
+.speed-map-table td:first-child {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.fuelling-indicator {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Sensor Settings */
+.sensor-settings {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sensor-boxes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.sensor-box {
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    border-radius: 6px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.sensor-box h4 {
+    margin-bottom: 10px;
+    text-align: center;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.slope-offset {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px;
+    align-items: center;
+}
+
+.slope-offset input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.slope-offset input:focus {
+    outline: none;
+    border-color: #1e3c72;
+    box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
+}
+
+.slope-offset label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Trim Settings */
+.trim-settings {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.trim-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #1e3c72;
+}
+
+/* Top header row (MAT, EGT1, etc.) */
+.trim-table tr.column-groups th {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 8px;
+    font-weight: 600;
+    border: 1px solid #1e3c72;
+    text-align: center;
+}
+
+/* Span two columns for each group header */
+.trim-table tr.column-groups th {
+    border-bottom: none;
+}
+
+/* Sub-header row */
+.trim-table tr.sub-headers th {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 6px;
+    font-weight: 500;
+    border: 1px solid #1e3c72;
+    border-top: none;
+}
+
+/* Rest of the styling remains the same */
+.trim-table td {
+    border: 1px solid #1e3c72;
+    padding: 6px 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Alternating row colors */
+.trim-table tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Last row (Trim row) styling */
+.trim-table tr:last-child {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    font-weight: 600;
+}
+
+.trim-table tr:last-child td {
+    border: 1px solid #1e3c72;
+}
+
+/* Highlight cells in the last row */
+.trim-table tr:last-child td.highlight {
+    background-color: #ffeb3b;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Column headers */
+.trim-table th {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 8px;
+    font-weight: 600;
+    border: 1px solid #1e3c72;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .trim-table {
+        font-size: 12px;
+    }
+    
+    .trim-table td,
+    .trim-table th {
+        padding: 4px 6px;
+    }
+}
+
+/* Actuators Section */
+.actuators-section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.actuators-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.actuator-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.actuator-table th,
+.actuator-table td {
+    border: 1px solid #000;
+    padding: 6px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.actuator-table th {
+    background-color: #f5f5f5;
+}
+
+.actuator-table tr:last-child td:last-child {
+    background-color: #ffeb3b;
+}
+
+/* Highlight Class */
+.highlight {
+    background-color: #ffeb3b;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .sensor-boxes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .actuators-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sensor-boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .actuators-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Additional Styles */
+.scrollable-content {
+    margin-top: 20px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,188,212,0.25);
+}
+
+.trim-row {
+    background-color: #f5f5f5;
+}
+
+/* Active state for connect button when connected */
+.connect-btn.active {
+    background: rgba(46, 125, 50, 0.3);
+    border-color: rgba(46, 125, 50, 0.4);
+}
+
+/* Button shadow effect */
+.nav-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.nav-button:hover::after {
+    opacity: 1;
+}
+
+/* Common table header styling */
+.speed-map-table,
+.actuator-table,
+.trim-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #1e3c72;
+}
+
+/* Column group headers */
+.column-groups th {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+    border: 1px solid #1e3c72;
+    text-align: center;
+    border-bottom: none;
+}
+
+/* Sub-headers */
+.sub-headers th {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 8px;
+    font-weight: 500;
+    border: 1px solid #1e3c72;
+    border-top: none;
+}
+
+/* Table cells */
+td {
+    border: 1px solid #1e3c72;
+    padding: 6px 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Alternating row colors */
+tr:nth-child(even):not(.column-groups):not(.sub-headers) {
+    background-color: #f5f5f5;
+}
+
+/* Highlight cells */
+.highlight {
+    background-color: #ffeb3b;
+    font-weight: bold;
+}
+
+/* Actuator tables specific */
+.actuator-table {
+    margin-bottom: 20px;
+}
+
+/* Speed/MAP table specific */
+.speed-map-table {
+    margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .column-groups th,
+    .sub-headers th,
+    td {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+}
