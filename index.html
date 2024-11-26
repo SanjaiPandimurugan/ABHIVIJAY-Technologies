@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engine Management System</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <nav class="top-nav">
@@ -42,71 +43,126 @@
             <div class="params-grid">
                 <!-- Speed Parameters -->
                 <div class="param-card">
+                    <div class="param-card-header">
+                        <span><i class="fas fa-tachometer-alt"></i> Speed Parameters</span>
+                    </div>
                     <div class="param-group">
-                        <div class="param-label">Speed [RPM]</div>
-                        <div class="param-value highlight">4150</div>
-                        <div class="param-label">Speed multiplier</div>
-                        <div class="param-value highlight">0.76775</div>
-                        <div class="param-label">Fuel type</div>
-                        <div class="param-value">LPG/CNG</div>
-                        <div class="param-label">Type of engine</div>
-                        <div class="param-value">2</div>
+                        <div class="param-row">
+                            <div class="param-label">Speed [RPM]</div>
+                            <div class="param-value highlight">4150</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">Speed multiplier</div>
+                            <div class="param-value highlight">0.76775</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">Fuel type</div>
+                            <div class="param-value">LPG/CNG</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">Type of engine</div>
+                            <div class="param-value">2</div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Fuelling Parameters -->
                 <div class="param-card">
+                    <div class="param-card-header">
+                        <span><i class="fas fa-gas-pump"></i> Fuelling Parameters</span>
+                    </div>
                     <div class="param-group">
-                        <div class="param-label">% fuelling</div>
-                        <div class="param-value highlight">0.555</div>
-                        <div class="param-label">Duty cycle [%]</div>
-                        <div class="param-value">55</div>
-                        <div class="param-label">Injection duration [ms]</div>
-                        <div class="param-value highlight">0.111</div>
-                        <div class="param-label">Z opening</div>
-                        <div class="param-value">2</div>
+                        <div class="param-row">
+                            <div class="param-label">% fuelling</div>
+                            <div class="param-value highlight">0.555</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">Duty cycle [%]</div>
+                            <div class="param-value">55</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">Injection duration [ms]</div>
+                            <div class="param-value highlight">0.111</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">Z opening</div>
+                            <div class="param-value">2</div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- MAP & Temperature -->
                 <div class="param-card">
+                    <div class="param-card-header">
+                        <span><i class="fas fa-temperature-high"></i> MAP & Temperature</span>
+                    </div>
                     <div class="param-group">
-                        <div class="param-label">MAP</div>
-                        <div class="param-value">48</div>
-                        <div class="param-label">MAT</div>
-                        <div class="param-value">55</div>
-                        <div class="param-label">EGT 1</div>
-                        <div class="param-value">250</div>
-                        <div class="param-label">EGT 2</div>
-                        <div class="param-value">250</div>
+                        <div class="param-row">
+                            <div class="param-label">MAP</div>
+                            <div class="param-value">48</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">MAT</div>
+                            <div class="param-value">55</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">EGT 1</div>
+                            <div class="param-value">250</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">EGT 2</div>
+                            <div class="param-value">250</div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Knock & System -->
                 <div class="param-card">
+                    <div class="param-card-header">
+                        <span><i class="fas fa-exclamation-triangle"></i> Knock & System</span>
+                    </div>
                     <div class="param-group">
-                        <div class="param-label">Knock 1</div>
-                        <div class="param-value">--</div>
-                        <div class="param-label">Knock 2</div>
-                        <div class="param-value">--</div>
-                        <div class="param-label">Delta P</div>
-                        <div class="param-value">1.2</div>
-                        <div class="param-label">System Voltage</div>
-                        <div class="param-value">--</div>
+                        <div class="param-row">
+                            <div class="param-label">Knock 1</div>
+                            <div class="param-value">--</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">Knock 2</div>
+                            <div class="param-value">--</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">Delta P</div>
+                            <div class="param-value">1.2</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">System Voltage</div>
+                            <div class="param-value">--</div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Fuelling Keys -->
                 <div class="param-card">
+                    <div class="param-card-header">
+                        <span><i class="fas fa-key"></i> Fuelling Keys</span>
+                    </div>
                     <div class="param-group">
-                        <div class="param-label">Fuelling Key [ms]</div>
-                        <div class="param-value">--</div>
-                        <div class="param-label">Fuelling Starting [ms]</div>
-                        <div class="param-value">--</div>
-                        <div class="param-label">Start Fuel DFPM</div>
-                        <div class="param-value">--</div>
-                        <div class="param-label">Errors</div>
-                        <div class="param-value">--</div>
+                        <div class="param-row">
+                            <div class="param-label">Fuelling Key [ms]</div>
+                            <div class="param-value">--</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">Fuelling Starting [ms]</div>
+                            <div class="param-value">--</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">Start Fuel DFPM</div>
+                            <div class="param-value">--</div>
+                        </div>
+                        <div class="param-row">
+                            <div class="param-label">Errors</div>
+                            <div class="param-value">--</div>
+                        </div>
                     </div>
                 </div>
             </div>

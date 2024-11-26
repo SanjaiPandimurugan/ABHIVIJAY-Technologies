@@ -272,3 +272,48 @@ function adjustTableLayout() {
         container.classList.remove('mobile');
     }
 }
+
+// Enhanced functionality
+function showToast(message, type = 'info') {
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.innerHTML = `
+        <span class="loading-indicator"></span>
+        <span>${message}</span>
+    `;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => toast.classList.add('show'), 100);
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
+// Add smooth transitions between data updates
+function updateValue(element, newValue) {
+    const currentValue = parseFloat(element.textContent);
+    const steps = 20;
+    const increment = (newValue - currentValue) / steps;
+    let current = currentValue;
+    
+    const animate = () => {
+        current += increment;
+        element.textContent = current.toFixed(4);
+        
+        if (Math.abs(current - newValue) > Math.abs(increment)) {
+            requestAnimationFrame(animate);
+        } else {
+            element.textContent = newValue.toFixed(4);
+        }
+    };
+    
+    requestAnimationFrame(animate);
+}
+
+// Add connection status indicator
+function updateConnectionStatus(status) {
+    const indicator = document.createElement('div');
+    indicator.className = `status-indicator ${status}`;
+    // Add to navbar
+}
